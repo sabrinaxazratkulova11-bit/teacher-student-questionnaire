@@ -1,0 +1,102 @@
+[
+    {
+        "section": "relationship",
+        "text": "My teacher explains difficult ideas in a way I can understand.",
+        "reverse": false
+    },
+    {
+        "section": "relationship",
+        "text": "I feel comfortable asking my teacher for clarification when I am confused.",
+        "reverse": false
+    },
+    {
+        "section": "relationship",
+        "text": "My teacher treats students fairly during lessons and assessments.",
+        "reverse": false
+    },
+    {
+        "section": "relationship",
+        "text": "My teacher listens carefully when students express their opinions.",
+        "reverse": false
+    },
+    {
+        "section": "relationship",
+        "text": "I receive useful academic feedback from my teacher.",
+        "reverse": false
+    },
+    {
+        "section": "relationship",
+        "text": "My teacher encourages me to improve even when I make mistakes.",
+        "reverse": false
+    },
+    {
+        "section": "relationship",
+        "text": "I trust my teacher's advice about my studies.",
+        "reverse": false
+    },
+    {
+        "section": "relationship",
+        "text": "My teacher notices when students are struggling.",
+        "reverse": false
+    },
+    {
+        "section": "relationship",
+        "text": "The classroom atmosphere created by my teacher feels supportive.",
+        "reverse": false
+    },
+    {
+        "section": "relationship",
+        "text": "I feel respected by my teacher as a learner.",
+        "reverse": false
+    },
+    {
+        "section": "wellbeing",
+        "text": "I feel motivated to attend my classes regularly.",
+        "reverse": false
+    },
+    {
+        "section": "wellbeing",
+        "text": "I feel emotionally drained after dealing with academic tasks.",
+        "reverse": true
+    },
+    {
+        "section": "wellbeing",
+        "text": "I feel confident about my ability to complete academic work successfully.",
+        "reverse": false
+    },
+    {
+        "section": "wellbeing",
+        "text": "I can stay calm when academic pressure increases.",
+        "reverse": false
+    },
+    {
+        "section": "wellbeing",
+        "text": "I find it difficult to relax because of my studies.",
+        "reverse": true
+    },
+    {
+        "section": "wellbeing",
+        "text": "I feel satisfied with my overall learning experience.",
+        "reverse": false
+    },
+    {
+        "section": "wellbeing",
+        "text": "I feel nervous before classes, tests, or deadlines.",
+        "reverse": true
+    },
+    {
+        "section": "wellbeing",
+        "text": "I manage my study responsibilities effectively.",
+        "reverse": false
+    },
+    {
+        "section": "wellbeing",
+        "text": "I feel mentally exhausted because of university work.",
+        "reverse": true
+    },
+    {
+        "section": "wellbeing",
+        "text": "I feel positive about my progress as a student.",
+        "reverse": false
+    }
+]

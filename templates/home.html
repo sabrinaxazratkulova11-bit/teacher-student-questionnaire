@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Questionnaire</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">Student Survey System</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/load-results">Results</a>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="hero-card">
+            <div class="badge">Web-Based Coursework Project</div>
+            <h1 class="hero-title">Teacher–Student Relationship and Student Well-Being Questionnaire</h1>
+            <p class="hero-text">
+                A web-based psychological questionnaire system designed to assess teacher–student
+                relationship quality and student well-being using structured survey responses.
+            </p>
+
+            <div class="hero-actions">
+                <a href="/student-form" class="btn-primary">Start New Questionnaire</a>
+                <a href="/load-results" class="btn-secondary">Load Existing Results</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

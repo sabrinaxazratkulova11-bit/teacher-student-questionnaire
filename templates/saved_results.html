@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">Student Survey System</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/load-results">Results</a>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="card">
+            <h1 class="title">Saved Results</h1>
+            <p class="subtitle">Previously saved questionnaire records.</p>
+
+            {% if results %}
+                {% for r in results %}
+                    <div class="saved-card">
+                        <div class="saved-header">
+                            <h3>Record {{ loop.index }}</h3>
+                            <span>{{ r.date }}</span>
+                        </div>
+
+                        <div class="saved-grid">
+                            <p><strong>Name:</strong> {{ r.given_name }} {{ r.surname }}</p>
+                            <p><strong>Student ID:</strong> {{ r.student_id }}</p>
+                            <p><strong>Relationship:</strong> {{ r.relationship }} / 50 ({{ r.relationship_level }})</p>
+                            <p><strong>Well-Being:</strong> {{ r.wellbeing }} / 50 ({{ r.wellbeing_level }})</p>
+                            <p><strong>Total:</strong> {{ r.total }} / 100</p>
+                            <p><strong>State:</strong> {{ r.state }}</p>
+                        </div>
+
+                        <div class="saved-text">
+                            <p><strong>Analysis:</strong> {{ r.analysis }}</p>
+                            <p><strong>Suggestion:</strong> {{ r.suggestion }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="note">No saved results found yet.</div>
+            {% endif %}
+
+            <div class="actions">
+                <a href="/" class="btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

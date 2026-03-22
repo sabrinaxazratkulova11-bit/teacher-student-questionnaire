@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">Student Survey System</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/load-results">Results</a>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="card">
+            <h1 class="title">Questionnaire</h1>
+            <p class="subtitle">Please answer all questions honestly using the 1–5 scale.</p>
+
+            <form action="/result" method="post">
+                <input type="hidden" name="surname" value="{{ surname }}">
+                <input type="hidden" name="given_name" value="{{ given_name }}">
+                <input type="hidden" name="dob" value="{{ dob }}">
+                <input type="hidden" name="student_id" value="{{ student_id }}">
+
+                {% for q in questions %}
+                    <div class="question-card">
+                        <div class="question-number">Question {{ loop.index }}</div>
+                        <div class="question-text">{{ q.text }}</div>
+
+                        <div class="option-list">
+                            <label class="option-item">
+                                <input type="radio" name="q{{ loop.index0 }}" value="1" required>
+                                <span>1. Strongly Disagree</span>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="radio" name="q{{ loop.index0 }}" value="2">
+                                <span>2. Disagree</span>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="radio" name="q{{ loop.index0 }}" value="3">
+                                <span>3. Neutral</span>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="radio" name="q{{ loop.index0 }}" value="4">
+                                <span>4. Agree</span>
+                            </label>
+
+                            <label class="option-item">
+                                <input type="radio" name="q{{ loop.index0 }}" value="5">
+                                <span>5. Strongly Agree</span>
+                            </label>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="actions">
+                    <button type="submit" class="btn-primary">Submit Answers</button>
+                    <a href="/" class="btn-secondary">Back to Home</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">Student Survey System</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/load-results">Results</a>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="card">
+            <h1 class="title">Student Information</h1>
+            <p class="subtitle">Complete the form below before starting the questionnaire.</p>
+
+            {% if error %}
+                <div class="alert">{{ error }}</div>
+            {% endif %}
+
+            <form action="/start" method="post">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="surname">Surname</label>
+                        <input type="text" id="surname" name="surname" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="given_name">Given Name</label>
+                        <input type="text" id="given_name" name="given_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth (YYYY-MM-DD)</label>
+                        <input type="text" id="dob" name="dob" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student_id">Student ID</label>
+                        <input type="text" id="student_id" name="student_id" required>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="btn-primary">Start Questionnaire</button>
+                    <a href="/" class="btn-secondary">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

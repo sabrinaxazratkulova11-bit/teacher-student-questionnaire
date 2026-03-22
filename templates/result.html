@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">Student Survey System</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/load-results">Results</a>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="card">
+            <h1 class="title">Final Result</h1>
+            <p class="subtitle">Your questionnaire has been completed successfully.</p>
+
+            <div class="student-info-box">
+                <p><strong>Name:</strong> {{ result.given_name }} {{ result.surname }}</p>
+                <p><strong>Date of Birth:</strong> {{ result.dob }}</p>
+                <p><strong>Student ID:</strong> {{ result.student_id }}</p>
+            </div>
+
+            <div class="result-grid">
+                <div class="result-box blue">
+                    <h3>Relationship Score</h3>
+                    <p>{{ result.relationship }}/50</p>
+                    <span>{{ result.relationship_level }}</span>
+                </div>
+
+                <div class="result-box purple">
+                    <h3>Well-Being Score</h3>
+                    <p>{{ result.wellbeing }}/50</p>
+                    <span>{{ result.wellbeing_level }}</span>
+                </div>
+
+                <div class="result-box dark">
+                    <h3>Total Score</h3>
+                    <p>{{ result.total }}/100</p>
+                    <span>Overall</span>
+                </div>
+
+                <div class="result-box
+                    {% if result.state in ['Thriving', 'Stable and Supported'] %}green
+                    {% elif result.state in ['Generally Positive', 'Mixed Condition'] %}orange
+                    {% else %}red{% endif %}">
+                    <h3>Psychological State</h3>
+                    <p>{{ result.state }}</p>
+                    <span>Assessment</span>
+                </div>
+            </div>
+
+            <div class="text-panel">
+                <h2>Analysis</h2>
+                <p>{{ result.analysis }}</p>
+            </div>
+
+            <div class="text-panel">
+                <h2>Suggestion</h2>
+                <p>{{ result.suggestion }}</p>
+            </div>
+
+            <div class="note">
+                This questionnaire provides supportive educational feedback and does not replace
+                professional psychological diagnosis.
+            </div>
+
+            <div class="actions">
+                <a href="/" class="btn-primary">Back to Home</a>
+                <a href="/load-results" class="btn-secondary">View Saved Results</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
