@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Results</title>
+    <title>My Results</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -18,8 +18,8 @@
 
     <div class="page">
         <div class="card">
-            <h1 class="title">Admin Results</h1>
-            <p class="subtitle">All saved questionnaire records.</p>
+            <h1 class="title">My Results</h1>
+            <p class="subtitle">Showing results for Student ID: {{ student_id }}</p>
 
             {% if results %}
                 {% for r in results %}
@@ -45,11 +45,12 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <div class="note">No saved results found yet.</div>
+                <div class="note">No results found for this Student ID.</div>
             {% endif %}
 
             <div class="actions">
                 <a href="/" class="btn-primary">Back to Home</a>
+                <a href="/my-results-form" class="btn-secondary">Search Again</a>
             </div>
         </div>
     </div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">Student Survey System</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/my-results-form">My Results</a>
+            <a href="/admin-login">Admin</a>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="card">
+            <h1 class="title">Admin Panel</h1>
+            <p class="subtitle">Enter the admin password to view all saved results.</p>
+
+            {% if error %}
+                <div class="alert">{{ error }}</div>
+            {% endif %}
+
+            <form action="/admin-results" method="post">
+                <div class="form-group">
+                    <label for="password">Admin Password</label>
+                    <input type="text" id="password" name="password" required>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="btn-primary">Open Admin Panel</button>
+                    <a href="/" class="btn-secondary">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
